@@ -1,0 +1,37 @@
+# UC Berkeley EECS Hub
+
+The front door to four free tools for UC Berkeley EECS students:
+
+| Tool | What it does |
+| --- | --- |
+| [EECS Planner](https://eecs-planner.vercel.app) | Maps your whole degree, semester by semester, with AP credit, focus tracks and an AI advisor |
+| [EECS Prereqs](https://eecs-prereqs.vercel.app) | What every EECS course needs first, the full chain, and what it unlocks |
+| [EECS Electives](https://eecs-electives.vercel.app) | A five-question quiz that ranks upper-division electives for you |
+| [EECS Links](https://eecs-links.vercel.app) | Every important Berkeley link in one place |
+
+## Features
+
+- A card for each tool, a **"Which tool do I need?"** section that matches common questions to the right one, and how the tools fit together through the years.
+- **Jump to a course:** type a code or name (e.g. "CS 170" or "machine learning") to open its prerequisites on EECS Prereqs. Arrow keys and Enter work.
+- A 🏠 button in every site's switcher leads back here.
+- Light and dark mode, and a layout that works on phones.
+
+## Running locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3004`. The tools run locally on ports 3000 (planner), 3001 (links), 3002 (prereqs) and 3003 (electives); in development the links point there.
+
+## Course data
+
+`data/courses.json` (for the course search) comes from EECS Prereqs:
+
+```bash
+npm run sync-data                                        # from https://eecs-prereqs.vercel.app/courses.json
+npm run sync-data -- ../eecs-prereqs/data/courses.json   # or from a local copy
+```
+
+This is an unofficial student resource, not affiliated with UC Berkeley.
