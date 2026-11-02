@@ -27,11 +27,15 @@ Open `http://localhost:3004`. The tools run locally on ports 3000 (planner), 300
 
 ## Course data
 
-`data/courses.json` (for the course search) comes from EECS Prereqs:
+`data/courses.json` (for the course search) comes from EECS Prereqs. A GitHub Action (`.github/workflows/sync-course-data.yml`) syncs it every Monday and opens a pull request when it changed (enable **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**). To refresh it by hand:
 
 ```bash
 npm run sync-data                                        # from https://eecs-prereqs.vercel.app/courses.json
 npm run sync-data -- ../eecs-prereqs/data/courses.json   # or from a local copy
 ```
+
+## Settings
+
+`NEXT_PUBLIC_FEEDBACK_URL` (optional) is a Google Form link; when it's set, the footer shows a "💬 Send feedback" button. Visits are counted with [Vercel Web Analytics](https://vercel.com/docs/analytics) (no cookies); turn it on under the project's **Analytics** tab.
 
 This is an unofficial student resource, not affiliated with UC Berkeley.
