@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import data from "@/data/courses.json";
+import { withTaken } from "@/lib/handoff";
 import { siteUrl } from "@/lib/suite";
 
 type Course = { code: string; display: string; title: string };
@@ -31,7 +32,7 @@ export default function CourseJump() {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const results = search(query);
-  const go = (c: Course) => window.location.assign(`${siteUrl("prereqs")}/#${c.code}`);
+  const go = (c: Course) => window.location.assign(withTaken(`${siteUrl("prereqs")}/#${c.code}`));
 
   return (
     <div className="relative mx-auto mt-8 max-w-xl lg:mx-0">

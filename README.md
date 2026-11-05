@@ -25,6 +25,8 @@ npm run dev
 
 Open `http://localhost:3004`. The tools run locally on ports 3000 (planner), 3001 (links), 3002 (prereqs) and 3003 (electives); in development the links point there.
 
+GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`).
+
 ## Course data
 
 `data/courses.json` (for the course search) comes from EECS Prereqs. A GitHub Action (`.github/workflows/sync-course-data.yml`) syncs it every Monday and opens a pull request when it changed (enable **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**). To refresh it by hand:
@@ -39,3 +41,7 @@ npm run sync-data -- ../eecs-prereqs/data/courses.json   # or from a local copy
 `NEXT_PUBLIC_FEEDBACK_URL` (optional) is a Google Form link; when it's set, the footer shows a "💬 Send feedback" button. Visits are counted with [Vercel Web Analytics](https://vercel.com/docs/analytics) (no cookies); turn it on under the project's **Analytics** tab.
 
 This is an unofficial student resource, not affiliated with UC Berkeley.
+
+## Across the EECS sites
+
+Courses marked as taken travel with the links between the EECS sites (`?taken=CS61A.CS61B`), so students enter them once. `lib/handoff.ts` and `components/SuiteLinks.tsx` do this and are the same in all five sites; change them in all five. Each site also has a link preview image (`app/opengraph-image.tsx`), a sitemap and a robots file.
