@@ -28,7 +28,7 @@ export const TOOLS: Tool[] = [
     icon: "🧭",
     name: "EECS Prereqs",
     tagline: "What every course needs first, and what it unlocks.",
-    features: ["Every undergrad EECS course", "Full prerequisite chains", "Checked against the Berkeley catalog"],
+    features: ["Every undergrad EECS course", "What you can take next term", "Checked against the Berkeley catalog"],
     cta: "Look up a course",
     url: siteUrl("prereqs"),
   },
@@ -37,7 +37,7 @@ export const TOOLS: Tool[] = [
     icon: "🎯",
     name: "EECS Electives",
     tagline: "Find the upper-division electives made for you.",
-    features: ["Five-question quiz", "Ranked picks with reasons", "The path of prerequisites to get there"],
+    features: ["Five-question quiz", "Ranked picks with reasons", "Send your picks to the Planner"],
     cta: "Find my electives",
     url: siteUrl("electives"),
   },
@@ -54,12 +54,12 @@ export const TOOLS: Tool[] = [
 
 export const tool = (id: SiteId) => TOOLS.find((t) => t.id === id)!;
 
-// common questions, each answered by one of the tools
-export const QUESTIONS: { q: string; tool: SiteId }[] = [
+// common questions, each answered by one of the tools (`at` goes to a spot on its page)
+export const QUESTIONS: { q: string; tool: SiteId; at?: string }[] = [
   { q: "I'm an incoming student. What should my four years look like?", tool: "planner" },
   { q: "Can I graduate early with my AP credit?", tool: "planner" },
-  { q: "Can I take CS 170 next semester?", tool: "prereqs" },
-  { q: "What do I need before CS 189?", tool: "prereqs" },
+  { q: "What can I take next semester?", tool: "prereqs", at: "/#next" },
+  { q: "What do I need before CS 189?", tool: "prereqs", at: "/#CS189" },
   { q: "Which electives fit what I'm into?", tool: "electives" },
   { q: "I still need a design course. Which ones count?", tool: "electives" },
   { q: "Where do I enroll, or check my waitlist?", tool: "links" },
@@ -69,7 +69,7 @@ export const QUESTIONS: { q: string; tool: SiteId }[] = [
 // how the tools fit through the years
 export const JOURNEY: { when: string; text: string; tool: SiteId }[] = [
   { when: "Before you arrive", text: "Plan all four years around your AP credit and interests.", tool: "planner" },
-  { when: "Every enrollment period", text: "Check you've met the prerequisites before you sign up.", tool: "prereqs" },
+  { when: "Every enrollment period", text: "See what you can take next term, and check the prerequisites before you sign up.", tool: "prereqs" },
   { when: "Sophomore year", text: "Pick upper-division electives that fit where you're headed.", tool: "electives" },
   { when: "All the time", text: "Find course sites, tutoring, internships and campus help.", tool: "links" },
 ];
