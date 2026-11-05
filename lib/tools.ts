@@ -1,5 +1,8 @@
 import { siteUrl, type SiteId } from "@/lib/suite";
 
+// whose requirements the Planner follows; update with the Planner's CATALOG_YEAR (backend/curriculum.py)
+export const CATALOG_YEAR = "2026–27";
+
 export type Tool = {
   id: SiteId;
   icon: string;
@@ -16,7 +19,7 @@ export const TOOLS: Tool[] = [
     icon: "🗺️",
     name: "EECS Planner",
     tagline: "Map your whole degree, semester by semester.",
-    features: ["Every 2026–27 requirement", "AP credit and focus tracks", "Drag and drop, plus an AI advisor"],
+    features: [`Every ${CATALOG_YEAR} requirement`, "AP credit and focus tracks", "Drag and drop, plus an AI advisor"],
     cta: "Plan my degree",
     url: siteUrl("planner"),
   },
