@@ -25,7 +25,7 @@ npm run dev
 
 Open `http://localhost:3004`. The tools run locally on ports 3000 (planner), 3001 (links), 3002 (prereqs) and 3003 (electives); in development the links point there.
 
-GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`).
+GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`). An accessibility check (axe, in Playwright) runs on the home page and the course search in light and dark mode; run it locally with `npx playwright test` (it starts the dev server, or set `PORT` if 3004 is taken).
 
 ## Course data
 

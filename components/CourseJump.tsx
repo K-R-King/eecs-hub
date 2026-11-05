@@ -60,17 +60,20 @@ export default function CourseJump() {
       {results.length > 0 && (
         <ul id="jump-results" role="listbox" className="absolute z-20 mt-2 w-full overflow-hidden rounded-2xl bg-white text-left shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
           {results.map((c, i) => (
-            <li key={c.code} id={`jump-${c.code}`} role="option" aria-selected={i === active}>
-              <button
-                type="button"
-                onMouseEnter={() => setActive(i)}
-                onClick={() => go(c)}
-                className={`flex w-full items-baseline gap-3 px-4 py-3 text-left transition ${i === active ? "bg-gold/15" : ""}`}
-              >
-                <span className="shrink-0 font-bold text-berkeley dark:text-blue-300">{c.display}</span>
-                <span className="truncate text-sm text-slate-600 dark:text-slate-400">{c.title}</span>
-                <span className="ml-auto shrink-0 text-xs font-semibold text-gold-dark dark:text-gold">Prereqs →</span>
-              </button>
+            // options aren't buttons: the search box keeps focus and handles the keys (arrows, Enter)
+            <li
+              key={c.code}
+              id={`jump-${c.code}`}
+              role="option"
+              aria-selected={i === active}
+              onMouseEnter={() => setActive(i)}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => go(c)}
+              className={`flex w-full cursor-pointer items-baseline gap-3 px-4 py-3 text-left transition ${i === active ? "bg-gold/15" : ""}`}
+            >
+              <span className="shrink-0 font-bold text-berkeley dark:text-blue-300">{c.display}</span>
+              <span className="truncate text-sm text-slate-600 dark:text-slate-400">{c.title}</span>
+              <span className="ml-auto shrink-0 text-xs font-semibold text-gold-dark dark:text-gold">Prereqs →</span>
             </li>
           ))}
         </ul>

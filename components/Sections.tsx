@@ -42,14 +42,14 @@ export function Questions() {
       <h2 className="text-center text-3xl font-extrabold tracking-tight text-berkeley dark:text-blue-300 sm:text-4xl">
         Which tool do I need?
       </h2>
-      <p className="mt-2 text-center text-slate-500 dark:text-slate-400">Pick the question that sounds like yours.</p>
+      <p className="mt-2 text-center text-slate-600 dark:text-slate-400">Pick the question that sounds like yours.</p>
       <ul className="mt-10 grid gap-3 sm:grid-cols-2">
-        {QUESTIONS.map(({ q, tool: id }) => {
+        {QUESTIONS.map(({ q, tool: id, at }) => {
           const t = tool(id);
           return (
             <li key={q}>
               <a
-                href={t.url}
+                href={`${t.url}${at ?? ""}`}
                 className="group flex h-full items-center gap-4 rounded-2xl bg-white p-4 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-berkeley/10 hover:ring-gold/60 dark:bg-slate-900 dark:ring-slate-700"
               >
                 <span className="text-2xl" aria-hidden>💬</span>
@@ -73,7 +73,7 @@ export function Journey() {
       <h2 className="text-center text-3xl font-extrabold tracking-tight text-berkeley dark:text-blue-300 sm:text-4xl">
         Built to work <span className="text-gold-dark dark:text-gold">together</span>
       </h2>
-      <p className="mt-2 text-center text-slate-500 dark:text-slate-400">Each tool links to the others, so you can move from one to the next.</p>
+      <p className="mt-2 text-center text-slate-600 dark:text-slate-400">Each tool links to the others, so you can move from one to the next.</p>
 
       <ol className="relative mt-12 grid gap-6 md:grid-cols-4">
         {/* gold line through the steps on wide screens */}
