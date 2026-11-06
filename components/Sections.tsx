@@ -8,7 +8,7 @@ export function Tools() {
           <a
             key={t.id}
             href={t.url}
-            className="group relative flex animate-fade-up flex-col overflow-hidden rounded-3xl bg-white p-7 shadow-xl shadow-berkeley/10 ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl hover:ring-gold/60 dark:bg-slate-900 dark:ring-slate-700 sm:p-8"
+            className="group relative flex animate-fade-up flex-col overflow-hidden rounded-3xl bg-white p-7 md:odd:last:col-span-2 shadow-xl shadow-berkeley/10 ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-2xl hover:ring-gold/60 dark:bg-slate-900 dark:ring-slate-700 sm:p-8"
             style={{ animationDelay: `${i * 100}ms` }}
           >
             {/* soft gold glow in the corner */}
@@ -75,9 +75,9 @@ export function Journey() {
       </h2>
       <p className="mt-2 text-center text-slate-600 dark:text-slate-400">Each tool links to the others, so you can move from one to the next.</p>
 
-      <ol className="relative mt-12 grid gap-6 md:grid-cols-4">
+      <ol className="relative mt-12 grid gap-6 md:grid-cols-5">
         {/* gold line through the steps on wide screens */}
-        <span className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-linear-to-r from-gold/20 via-gold to-gold/20 md:block" aria-hidden />
+        <span className="pointer-events-none absolute left-[10%] right-[10%] top-7 hidden h-0.5 bg-linear-to-r from-gold/20 via-gold to-gold/20 md:block" aria-hidden />
         {JOURNEY.map((j, i) => {
           const t = tool(j.tool);
           return (

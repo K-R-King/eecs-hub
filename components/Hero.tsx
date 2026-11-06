@@ -62,8 +62,8 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-base text-blue-100/90 sm:text-lg lg:mx-0">
-            Four free tools that work together: plan your degree, check prerequisites, find your
-            electives, and keep every important link a click away.
+            Five free tools: plan your degree, check prerequisites, find your electives, keep every
+            important link a click away, and search open internships.
           </p>
 
           <CourseJump />
@@ -82,7 +82,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* the four tools, connected */}
+        {/* the tools, connected */}
         <div className="relative mx-auto hidden w-full max-w-md animate-fade-up [animation-delay:200ms] sm:block">
           <div className="absolute -inset-4 rounded-4xl bg-gold/10 blur-2xl" />
           <div className="relative rounded-3xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-md">
