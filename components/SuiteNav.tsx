@@ -7,7 +7,7 @@ const idle = `${pill} font-medium text-blue-100 transition hover:bg-white/10 hov
 // switches between the EECS Hub and its tools; the same component lives in each EECS site
 export default function SuiteNav({ current }: { current: SiteId | "home" }) {
   return (
-    <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 p-1 backdrop-blur" aria-label="EECS student tools">
+    <div className="flex max-w-full flex-wrap items-center justify-center gap-1 rounded-2xl border border-white/15 bg-white/5 p-1 backdrop-blur sm:rounded-full" aria-label="EECS student tools">
       {current === "home" ? (
         <span aria-current="page" aria-label="EECS Hub" className={`${active} px-2.5`}>🏠</span>
       ) : (
