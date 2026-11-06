@@ -50,6 +50,15 @@ export const TOOLS: Tool[] = [
     cta: "Browse the links",
     url: siteUrl("links"),
   },
+  {
+    id: "internships",
+    icon: "💼",
+    name: "Internship Finder",
+    tagline: "Open internships for university students, in one search.",
+    features: ["Refreshed every day", "Filter by field, season and location", "Track what you've saved and applied to"],
+    cta: "Find internships",
+    url: siteUrl("internships"),
+  },
 ];
 
 export const tool = (id: SiteId) => TOOLS.find((t) => t.id === id)!;
@@ -64,6 +73,8 @@ export const QUESTIONS: { q: string; tool: SiteId; at?: string }[] = [
   { q: "I still need a design course. Which ones count?", tool: "electives" },
   { q: "Where do I enroll, or check my waitlist?", tool: "links" },
   { q: "Where can I get free tutoring?", tool: "links" },
+  { q: "Where can I find an internship?", tool: "internships" },
+  { q: "Which internships are open to undergrads?", tool: "internships" },
 ];
 
 // how the tools fit through the years
@@ -71,5 +82,6 @@ export const JOURNEY: { when: string; text: string; tool: SiteId }[] = [
   { when: "Before you arrive", text: "Plan all four years around your AP credit and interests.", tool: "planner" },
   { when: "Every enrollment period", text: "See what you can take next term, and check the prerequisites before you sign up.", tool: "prereqs" },
   { when: "Sophomore year", text: "Pick upper-division electives that fit where you're headed.", tool: "electives" },
-  { when: "All the time", text: "Find course sites, tutoring, internships and campus help.", tool: "links" },
+  { when: "All the time", text: "Find course sites, tutoring and campus help.", tool: "links" },
+  { when: "Internship season", text: "Search open internships and keep track of where you've applied.", tool: "internships" },
 ];

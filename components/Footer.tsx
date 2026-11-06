@@ -14,7 +14,7 @@ export default function Footer() {
           Bookmark <span className="text-gold">this page</span>
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-blue-200">
-          It&apos;s the front door to all four tools. Share it with anyone starting EECS at Berkeley.
+          It&apos;s the front door to all five tools. Share it with anyone starting EECS at Berkeley.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
