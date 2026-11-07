@@ -8,7 +8,7 @@ The front door to five free tools for UC Berkeley EECS students:
 | [EECS Prereqs](https://eecs-prereqs.vercel.app) | What every EECS course needs first, the full chain, and what it unlocks |
 | [EECS Electives](https://eecs-electives.vercel.app) | A five-question quiz that ranks upper-division electives for you |
 | [EECS Links](https://eecs-links.vercel.app) | Every important Berkeley link in one place |
-| [Internship Finder](https://find-internships.vercel.app) | Open internships for university students, refreshed daily, in one search |
+| [Internship Finder](https://find-internships.vercel.app) | U.S. internships and jobs at every level, refreshed daily, with filters for level, location and company size |
 
 ## Features
 
